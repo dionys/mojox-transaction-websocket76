@@ -20,20 +20,11 @@ use constant {
 sub build_frame {
 	my ($self, undef, undef, undef, undef, $type, $bytes) = @_;
 
-	warn("BUILDING FRAME\n") if DEBUG;
+	warn("-- Building frame (undef, undef, undef, undef, " . $type . ")\n") if DEBUG;
 
 	my $length = length($bytes);
 
-	if (DEBUG) {
-		warn('TYPE: ', $type, "\n");
-		warn('LENGTH: ', $length, "\n");
-		if ($length) {
-			warn('BYTES: ', $bytes, "\n");
-		}
-		else {
-			warn("NOTHING\n")
-		}
-	}
+	warn("-- Payload (" . length($bytes) . ")\n" . $bytes . "\n") if DEBUG;
 
 	return "\xff" if $type == CLOSE;
 	return "\x00" . $bytes . "\xff";
@@ -41,8 +32,6 @@ sub build_frame {
 
 sub parse_frame {
 	my ($self, $buffer) = @_;
-
-	warn("PARSING FRAME\n") if DEBUG;
 
 	my $index = index($$buffer, "\xff");
 
@@ -54,16 +43,8 @@ sub parse_frame {
 			? substr(substr($$buffer, 0, $index + 1, ''), 1, $length)
 			: '';
 
-	if (DEBUG) {
-		warn('TYPE: ', $type, "\n");
-		warn('LENGTH: ', $length, "\n");
-		if ($length) {
-			warn('BYTES: ', $bytes, "\n");
-		}
-		else {
-			warn("NOTHING\n")
-		}
-	}
+	warn("-- Parsing frame (undef, undef, undef, undef, " . $type . ")\n") if DEBUG;
+	warn("-- Payload (" . $length . ")\n" . $bytes . "\n") if DEBUG;
 
 	# Result does compatible with Mojo::Transaction::WebSocket.
 	return [1, 0, 0, 0, $type, $bytes];
@@ -77,7 +58,7 @@ sub server_handshake {
 
 	# Fetch request body.
 	$content->headers->content_length(length($content->leftovers));
-	$content->parse_body_once();
+	$content->parse_body();
 
 	my $res = bless($self->res, 'MojoX::Transaction::WebSocket76::_Response');
 	my $headers = $req->headers;
@@ -102,7 +83,7 @@ sub server_handshake {
 	$headers->upgrade('WebSocket');
 	$headers->connection('Upgrade');
 	$headers->header('Sec-WebSocket-Location' => $location);
-	$headers->sec_websocket_origin($origin) if $origin;
+	$headers->header('Sec-WebSocket-Origin' => $origin) if $origin;
 	$headers->sec_websocket_protocol($protocol) if $protocol;
 
 	return $self;
@@ -136,6 +117,15 @@ sub fix_headers {
 	$self->headers->remove('Content-Length');
 
 	return $self;
+}
+
+sub is_empty {
+	my ($self) = @_;
+
+	return unless my $code = $self->code;
+	# Handshake response has a body.
+	return if $code = 101;
+	return $self->SUPER::is_empty;
 }
 
 
@@ -243,7 +233,7 @@ L<http://github.com/dionys/mojox-transaction-websocket76/issues>
 
 =head1 AUTHOR
 
-Denis Ibaev, C<dionys@cpan.org> for Setup.ru.
+Denis Ibaev, C<dionys@cpan.org>.
 
 =head1 COPYRIGHT AND LICENSE
 
