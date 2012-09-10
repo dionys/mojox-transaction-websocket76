@@ -26,7 +26,7 @@ WriteMakefile(
 		'Test::More' => 0,
 	},
 	PREREQ_PM     => {
-		'Mojolicious' => '2.47',
+		'Mojolicious' => '2.52',
 	},
 	dist          => {COMPRESS => 'gzip -9f', SUFFIX => 'gz'},
 	clean         => {FILES => 'MojoX-Transaction-WebSocket76-*'},
