@@ -5,7 +5,7 @@ use Mojo::Util ('md5_bytes');
 use Mojo::Base 'Mojo::Transaction::WebSocket';
 
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 
 use constant DEBUG => &Mojo::Transaction::WebSocket::DEBUG;
