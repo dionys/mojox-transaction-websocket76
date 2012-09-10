@@ -7,7 +7,7 @@ DESCRIPTION
 
 MojoX::Transaction::WebSocket76 is a container for WebSocket transactions as
 described in hixie-76 draft. Support for this version of the protocol was
-removed in Mojolicious 1.17. But last version of the Safari browser (5.0.1)
+removed in Mojolicious 1.17. But old version of the Safari browser (5.0.1)
 supports only it.
 
 INSTALLATION
