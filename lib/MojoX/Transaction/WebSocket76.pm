@@ -124,7 +124,7 @@ sub is_empty {
 
 	return unless my $code = $self->code;
 	# Handshake response has a body.
-	return if $code = 101;
+	return if $code == 101;
 	return $self->SUPER::is_empty;
 }
 
