@@ -104,7 +104,8 @@ sub _challenge {
 1;
 
 
-package MojoX::Transaction::WebSocket76::_Response;
+package # Hide form PAUSE.
+	MojoX::Transaction::WebSocket76::_Response;
 
 use Mojo::Base 'Mojo::Message::Response';
 
