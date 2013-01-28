@@ -1,5 +1,8 @@
 Revision history for MojoX::Transaction::WebSocket76
 
+0.04
+        - Updated author & copyright info.
+
 0.03
         - Upgraded to work with new versions of Mojolicious (>= 2.52).
         - Updated distribution.
