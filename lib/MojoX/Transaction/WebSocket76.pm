@@ -207,6 +207,27 @@ L<Mojo::Transaction::WebSocket>.
 MojoX::Transaction::WebSocket76 inherits all methods from
 L<Mojo::Transaction::WebSocket>.
 
+Mojo::Transaction::WebSocket76 overrides the following methods from
+L<Mojo::Transaction::WebSocket>:
+
+=head2 build_frame
+
+  my $bytes = $ws->build_frame($fin, $rsv1, $rsv2, $rsv3, $op, $payload);
+
+Build WebSocket frame.
+
+=head2 parse_frame
+
+  my $frame = $ws->parse_frame(\$bytes);
+
+Parse WebSocket frame.
+
+=head2 server_handshake
+
+  $ws->server_handshake;
+
+Perform WebSocket handshake server-side, used to implement web servers.
+
 =head1 DEBUGGING
 
 You can set the C<MOJO_WEBSOCKET_DEBUG> environment variable to get some
