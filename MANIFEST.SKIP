@@ -1,5 +1,9 @@
 ^blib
 ^pm_to_blib
+^cover_db
 .*\.old$
 ^Makefile$
 ^\.git
+~$
+.*\.swp$
+MANIFEST.SKIP
