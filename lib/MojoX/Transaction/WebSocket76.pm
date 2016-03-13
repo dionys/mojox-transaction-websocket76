@@ -46,7 +46,7 @@ sub parse_frame {
 	warn("-- Parsing frame (undef, undef, undef, undef, " . $type . ")\n") if DEBUG;
 	warn("-- Payload (" . $length . ")\n" . $bytes . "\n") if DEBUG;
 
-	# Result does compatible with Mojo::Transaction::WebSocket.
+	# Result is compatible with Mojo::Transaction::WebSocket.
 	return [1, 0, 0, 0, $type, $bytes];
 }
 
@@ -104,7 +104,7 @@ sub _challenge {
 1;
 
 
-package # Hide form PAUSE.
+package # Hide from PAUSE.
 	MojoX::Transaction::WebSocket76::_Response;
 
 use Mojo::Base 'Mojo::Message::Response';
