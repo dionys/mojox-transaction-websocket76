@@ -1,16 +1,11 @@
-NAME
-
-MojoX::Transaction::WebSocket76 - WebSocket version hixie-76 transaction
-container
-
-DESCRIPTION
+# MojoX::Transaction::WebSocket76 - WebSocket version hixie-76 transaction container
 
 MojoX::Transaction::WebSocket76 is a container for WebSocket transactions as
 described in the hixie-76 draft. Support for this version of the protocol was
 removed in Mojolicious 1.17. However, only old versions of the Safari browser
 (5.0.1) support it.
 
-INSTALLATION
+## Installation
 
 To install this module, run the following commands:
 
@@ -19,31 +14,31 @@ To install this module, run the following commands:
     make test
     make install
 
-SUPPORT AND DOCUMENTATION
+## Support and documentation
 
-After installing, you can find documentation for this module with the perldoc
-command.
+After installing, you can find documentation for this module with the
+`perldoc` command.
 
     perldoc MojoX::Transaction::WebSocket76
 
-You can also look for information at:
+You can also look for information at the following locations:
 
-    Repository
+ - Repository:
         http://github.com/dionys/mojox-transaction-websocket76
-    Bug tracker
+ - Bug tracker:
         http://github.com/dionys/mojox-transaction-websocket76/issues
-    Annotated CPAN documentation
+ - Annotated CPAN documentation:
         http://annocpan.org/dist/MojoX-Transaction-WebSocket76
-    CPAN Ratings
+ - CPAN Ratings:
         http://cpanratings.perl.org/d/MojoX-Transaction-WebSocket76
-    Search CPAN
+ - Search CPAN:
         http://search.cpan.org/dist/MojoX-Transaction-WebSocket76/
 
-AUTHOR
+## Author
 
 Denis Ibaev, dionys@cpan.org for Setup.ru.
 
-COPYRIGHT AND LICENSE
+## Copyright and license
 
 Copyright (C) 2012-2015, Denis Ibaev.
 
