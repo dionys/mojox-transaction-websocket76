@@ -1,5 +1,7 @@
 package MojoX::Transaction::WebSocket76;
 
+# Mojo::Base implicitly uses strict and warnings, so quieten perlcritic
+## no critic (RequireUseStrict, RequireUseWarnings)
 use Mojo::Util ('md5_bytes');
 
 use Mojo::Base 'Mojo::Transaction::WebSocket';
