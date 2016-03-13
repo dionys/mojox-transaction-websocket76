@@ -3,19 +3,11 @@ package MojoX::Transaction::WebSocket76;
 use Mojo::Util ('md5_bytes');
 
 use Mojo::Base 'Mojo::Transaction::WebSocket';
-
+use Mojo::WebSocket qw(WS_TEXT WS_CLOSE);
 
 our $VERSION = '0.04';
 
-
-use constant DEBUG => &Mojo::Transaction::WebSocket::DEBUG;
-
-use constant {
-	TEXT   => &Mojo::Transaction::WebSocket::TEXT,
-	BINARY => &Mojo::Transaction::WebSocket::BINARY,
-	CLOSE  => &Mojo::Transaction::WebSocket::CLOSE,
-};
-
+use constant DEBUG => $Mojo::WebSocket::DEBUG;
 
 sub build_frame {
 	my ($self, undef, undef, undef, undef, $type, $bytes) = @_;
@@ -26,7 +18,7 @@ sub build_frame {
 
 	warn("-- Payload (" . length($bytes) . ")\n" . $bytes . "\n") if DEBUG;
 
-	return "\xff" if $type == CLOSE;
+	return "\xff" if $type == WS_CLOSE;
 	return "\x00" . $bytes . "\xff";
 }
 
@@ -37,7 +29,7 @@ sub parse_frame {
 
 	return if $index < 0;
 
-	my $type   = $index == 0 ? CLOSE : TEXT;
+	my $type   = $index == 0 ? WS_CLOSE : WS_TEXT;
 	my $length = $index - 1;
 	my $bytes  = $length
 			? substr(substr($$buffer, 0, $index + 1, ''), 1, $length)
