@@ -1,6 +1,7 @@
 Changes
 examples/websocket.pl
 lib/MojoX/Transaction/WebSocket76.pm
+LICENSE
 Makefile.PL
 MANIFEST
 META.json
