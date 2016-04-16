@@ -155,6 +155,10 @@ described in L<hixie-76 draft|http://tools.ietf.org/html/draft-hixie-thewebsocke
 Support for this version of the protocol was removed in L<Mojolicious> 1.17.
 However, only old versions of the Safari browser (5.0.1) support only it.
 
+B<NOTICE:> This code tested with Mojolicious 4.xx and below and might not
+works with higher versions. This code not works with Mojolicious 6.40 and
+above.
+
 To add support for both versions of the protocol (last and hixie-76 draft)
 in your Mojolicious application, add:
 

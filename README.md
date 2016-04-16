@@ -5,6 +5,10 @@ described in the hixie-76 draft. Support for this version of the protocol was
 removed in Mojolicious 1.17. However, only old versions of the Safari browser
 (5.0.1) support it.
 
+**NOTICE:** This code tested with Mojolicious 4.xx and below and might not
+works with higher versions. This code not works with Mojolicious 6.40 and
+above.
+
 ## Installation
 
 To install this module, run the following commands:

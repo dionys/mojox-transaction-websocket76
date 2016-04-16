@@ -3,6 +3,7 @@ abstract: 'WebSocket version hixie-76 transaction container'
 author:
     - 'Denis Ibaev <dionys@cpan.org>'
 build_requires:
+    CPAN::Version: 0
     Test::More: 0
 configure_requires:
     ExtUtils::MakeMaker: 0

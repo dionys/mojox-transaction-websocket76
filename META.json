@@ -19,14 +19,15 @@
         ]
     },
     "prereqs" : {
-        "build" : {
-            "requires" : {
-                "Test::More" : "0"
-            }
-        },
         "configure" : {
             "requires" : {
                 "ExtUtils::MakeMaker" : "0"
+            }
+        },
+        "test" : {
+            "requires" : {
+                "CPAN::Version" : "0"
+                "Test::More" : "0"
             }
         },
         "runtime" : {
