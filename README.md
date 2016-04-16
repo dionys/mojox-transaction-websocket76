@@ -36,11 +36,15 @@ You can also look for information at the following locations:
 
 ## Author
 
-Denis Ibaev, dionys@cpan.org for Setup.ru.
+Denis Ibaev, dionys@cpan.org.
+
+## Contributors.
+
+Paul Cochrane, cpan:PTC, paul@liekut.de.
 
 ## Copyright and license
 
-Copyright (C) 2012-2015, Denis Ibaev.
+Copyright (C) 2012-2016, Denis Ibaev.
 
 This program is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.

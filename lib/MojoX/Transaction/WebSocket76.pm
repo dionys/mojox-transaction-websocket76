@@ -257,11 +257,15 @@ L<http://github.com/dionys/mojox-transaction-websocket76/issues>
 
 =head1 AUTHOR
 
-Denis Ibaev, C<dionys@cpan.org> for Setup.ru.
+Denis Ibaev, C<dionys@cpan.org>.
+
+=head1 CONTRIBUTORS
+
+Paul Cochrane, cpan:PTC, C<paul@liekut.de>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2012-2015, Denis Ibaev.
+Copyright (C) 2012-2016, Denis Ibaev.
 
 This program is free software; you can redistribute it and/or modify it under
 the same terms as Perl itself.
